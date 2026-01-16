@@ -1,12 +1,13 @@
-'''
-
-.\DATA
+```
+./data
 ├─aug1
 │  ├─test
 │  │  ├─defect
 │  │  │  ├─ defect
 │  │  │  └─ false
 │  │  └─false
+│  │  │  ├─ defect
+│  │  │  └─ false
 │  ├─train
 │  │  ├─defect
 │  │  └─false
@@ -63,4 +64,5 @@
     └─val
         ├─defect
         └─false
-'''
+
+```
