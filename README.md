@@ -65,6 +65,7 @@
 [SAVE] weights\efficientnet-b3-aug1\data\aug1\test\heatmap\.tif | GT : 1 PRED : 1 | correct : True
 [SAVE] weights\efficientnet-b3-aug1\data\aug1\test\heatmap\.tif        | GT : 1 PRED : 1 | correct : True
 Done.
+```
 
 ### inference
 ```python inference.py data\split2 --arch "efficientnet-b3" --weight weights\efficientnet-b3\best_model.pth.tar --batch-size 1 --image-size 300```
