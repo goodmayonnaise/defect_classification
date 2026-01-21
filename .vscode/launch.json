@@ -1,0 +1,74 @@
+{
+    // IntelliSense를 사용하여 가능한 특성에 대해 알아보세요.
+    // 기존 특성에 대한 설명을 보려면 가리킵니다.
+    // 자세한 내용을 보려면 https://go.microsoft.com/fwlink/?linkid=830387을(를) 방문하세요.
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "heatmap",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/heatmap.py",
+            "args": [
+                "data/low1_aug1/test",
+                "--weight", "weights/efficientnet-b3-low1-aug1-bs4-lr0005/model_best.pth.tar",
+                // "data/aug1/test",
+                // "--arch", "resnet18",
+                // "--weight", "weights/resnet18-aug1-is320/model_best.pth.tar"
+            ],
+            "cwd": "${workspaceFolder}",
+            "justMyCode": false,
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "inference",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/inference1.py",
+            "args": [
+                "data/low1-aug1/test",
+                "-a", "efficientnet-b3", 
+                // "--batch-size", "8",
+                "--weight", "./weights/efficientnet-b3-low1-aug1-bs4-lr0005/model_best.pth.tar"
+                // "--arch", "resnet18",
+                // "--weight", "./weights/resnet18-aug1-is320/model_best.pth.tar"
+            ],
+            "cwd": "${workspaceFolder}",
+            "justMyCode": false,
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "train",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/train.py",
+            "args": [
+              "data/low1_aug1",
+              "--save-dir", "weights/test",
+              "--arch", "efficientnet-b3",
+              "--pretrained-from", "weights/efficientnet-b3-aug1/model_best.pth.tar",
+              "--batch-size", "16",
+              "--lr", "0.01",
+
+            ],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Run current Python file(cwd=main)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "cwd":"${workspaceFolder}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Python 디버거: 현재 파일",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        }
+    ]
+}
